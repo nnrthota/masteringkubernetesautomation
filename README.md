@@ -4,7 +4,7 @@ Book: Mastering Kubernetes Automation
 ## A one-stop solution to become a Master in automating Kubernetes Deployments using Helm, Kubernetes Client Libraries, and Kubernetes Operators
 <img align="center" width="850" src="docs/images/bookcover.jpg">
 <hr>
-Buy Now: <a target="_blank" href="https://www.amazon.in/gp/product/B084KZP9M7/ref=as_li_tl?ie=UTF8&camp=3638&creative=24630&creativeASIN=B084KZP9M7&linkCode=as2&tag=nnrthota-21&linkId=387013b439762ddae904df0dcb10e465">Mastering Hyperledger Fabric: Master The Art of Hyperledger Fabric on Kubernetes</a><img src="//ir-in.amazon-adsystem.com/e/ir?t=nnrthota-21&l=am2&o=31&a=B084KZP9M7" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+Buy Now: <a target="_blank" href="https://www.amazon.in/gp/product/B09H7MTG24/ref=as_li_tl?ie=UTF8&camp=3638&creative=24630&creativeASIN=B09H7MTG24&linkCode=as2&tag=book53-21&linkId=9c87ebdc9fbf0e3367acb3a40b8ea4c9">Mastering Kubernetes Automation: Automate deployments using Helm , Kubernetes Operators and Kubernetes client libraries</a>
 
 ***Key Features***
 <ul>
