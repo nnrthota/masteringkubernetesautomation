@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "tweet-app.fullname" . }}
+  labels:
+    {{- include "tweet-app.selectorLabels" . | nindent 4 }}
+spec:
+  type: {{ .Values.svc.type }}
+  ports:
+    - port: {{ .Values.svc.servicePort }}
+      targetPort: {{ .Values.svc.targetPort }}
+      nodePort: {{ .Values.svc.nodePort }}
+      name: {{ .Values.svc.portName }}
+  selector:
+     {{- include "tweet-app.podLabels" . | nindent 4 }}

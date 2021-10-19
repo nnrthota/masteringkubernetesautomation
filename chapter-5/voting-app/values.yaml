@@ -1,0 +1,130 @@
+deployments:
+  - name: db-dep 
+    globalSelector:
+        SelectorApp: vote-app
+    depSelector:
+        SelectorName: postgres-pod
+        SelectorApp: vote-app
+    podSelector:
+        PodName: postgres-pod
+        SelectorName: postgres-pod
+        SelectorApp: vote-app
+    replicaCount: 1
+    configMap:
+      name: db-conf
+      key1: auth-method
+      value1: trust
+    pvc:
+      accessMode: ReadWriteOnce
+      name: postgres-pvc
+      storage: 5Gi
+    pod:
+      containerImage: postgres:9.4
+      containerName: postgres
+      containerPort: 5432
+    configMapValue: true
+    volume: true
+    containerEnv:
+      - name: PGDATA
+        value: /var/lib/postgresql/data/pgdata
+  - name: redis-dep 
+    globalSelector:
+        SelectorApp: vote-app
+    depSelector:
+        SelectorName: redis-pod
+        SelectorApp: vote-app
+    podSelector:
+        PodName: redis-pod
+        SelectorName: redis-pod
+        SelectorApp: vote-app
+    replicaCount: 1
+    pod:
+      containerImage: redis:latest
+      containerName: redis
+      containerPort: 6379
+  - name: result-dep 
+    globalSelector:
+        SelectorApp: vote-app
+    depSelector:
+        SelectorName: result-app-pod
+        SelectorApp: vote-app
+    podSelector:
+        PodName: result-app-pod
+        SelectorName: result-app-pod
+        SelectorApp: vote-app
+    replicaCount: 1
+    pod:
+      containerImage: dockersamples/examplevotingapp_result
+      containerName: result-app
+      containerPort: 80
+  - name: vote-dep 
+    globalSelector:
+        SelectorApp: vote-app
+    depSelector:
+        SelectorName: vote-app-pod
+        SelectorApp: vote-app
+    podSelector:
+        PodName: vote-app-pod
+        SelectorName: vote-app-pod
+        SelectorApp: vote-app
+    replicaCount: 2
+    pod:
+      containerImage: dockersamples/examplevotingapp_vote
+      containerName: vote-app
+      containerPort: 80
+  - name: worker-dep 
+    globalSelector:
+        SelectorApp: worker-app
+    depSelector:
+        SelectorName: worker-app-pod
+        SelectorApp: worker-app
+    podSelector:
+        PodName: worker-app-pod
+        SelectorName: worker-app-pod
+        SelectorApp: worker-app
+    replicaCount: 1
+    pod:
+      containerImage: dockersamples/examplevotingapp_worker
+      containerName: worker-app
+
+services:
+  - name: db
+    type: ClusterIP
+    portName: db-port
+    targetPort: 5432
+    servicePort: 5432
+    nodePort:
+    lableSelectorName: db-service
+    lableSelectorApp: vote-app
+    podSelectorName: postgres-pod
+    podSelectorApp: vote-app
+  - name: redis
+    type: ClusterIP
+    portName: redis-port
+    targetPort: 6379
+    servicePort: 6379
+    nodePort:
+    lableSelectorName: redis-service
+    lableSelectorApp: vote-app
+    podSelectorName: redis-pod
+    podSelectorApp: vote-app
+  - name: result-svc
+    type: NodePort
+    portName: result-port
+    targetPort: 80
+    servicePort: 5001
+    nodePort: 31001
+    lableSelectorName: result-svc
+    lableSelectorApp: vote-app
+    podSelectorName: result-app-pod
+    podSelectorApp: vote-app
+  - name: vote-svc
+    type: NodePort
+    portName: vote-port
+    targetPort: 80
+    servicePort: 5000
+    nodePort: 31000
+    lableSelectorName: vote-svc
+    lableSelectorApp: vote-app
+    podSelectorName: vote-app-pod
+    podSelectorApp: vote-app

@@ -1,0 +1,11 @@
+{{- range .Values.deployments}}
+{{- if .configMap }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: {{ .configMap.name}}
+data: 
+  {{ .configMap.key1}}: {{ .configMap.value1}}
+---
+{{- end }}
+{{- end }}

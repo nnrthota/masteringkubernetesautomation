@@ -1,0 +1,28 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+apiVersion: v1
+appVersion: "1.0"
+description: votting-app from docker samples
+name: voting-app
+version: 0.1.0
+
+...
+files:
+  voting-app-0.1.0.tgz: sha256:27e1ff1342960bb32c3b5bf7fa433df06249618f8a782cb70c91dccebb261dff
+-----BEGIN PGP SIGNATURE-----
+
+wsFcBAEBCgAQBQJexCSSCRDTzXPFXXOT/gAAumcQAJfom4z2JcRhm8ls9JmWvvwe
+/D7M4FuID1+RcBC25XizfPTcixUn5P9E3abX5rmpcbw5SnHMNRh/Cg1fowg38QAZ
+mrvp7HHcwEZA47y0/axdbRiCE1ZLSBg2BQOBq/lbpu6ECkqt8x/cLT8ESxEW6twl
+YaoyhD4QH2VxfWf1tLZmDE/df4Bt4eKqvvta4IBr1EuEvg02bF1eWOApo4oxdRC6
+m0BSJxyRaZapSUZzEf9IentRStE262HRJZFyt1pt80f/aSzMaFa8sYPXldT4YA6V
+d6AoBJ06Bmf+w9ru3YW3EcdmBAq5itsD8N4zTL8rYsnReBysXUgI6Hp/6rKAucsh
+7hHEbS0K5DA5Bn0QTF4ct7gvZNjz7rwqhUMoOU/uUQXxZxTdBl2mdOE+HcSC7rOw
+u1tgQf8owunLubHlclO8L2+DqX3HwymcZYiNO1zvMPtU2I+VBV19oFs/5NeGmFs6
+GUPS5aUF1wPu7o8TfhCst7gDRLb5D/l4xyGQ9FR2RRsnB0pWXUxAmzOLeVPNiS4v
+xxvxw2GOkF/Sc2i/mL5mxA00qZSIGioF/pv8Hz5LwgnHBckP9yx637iY4XSP4u84
+qb7658Ddz3fR9Jb3KwXu0Ec6/QQ51P5FpJHKbr5fctw4126SwPE+QflOrn2N/v56
+YAWypmfueCB8beG3bYKE
+=qpWW
+-----END PGP SIGNATURE-----

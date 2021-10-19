@@ -1,0 +1,10 @@
+apiVersion: hosting.wordpress.com/v1alpha1
+kind: MYSQL
+metadata:
+  name: mysql-sample
+spec:
+  # Add fields here
+  size: 1
+  dataVolumeSize: 4Gi
+status:
+  nodes:

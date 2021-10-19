@@ -1,0 +1,20 @@
+{{- range .Values.services}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .name | quote }}
+  labels:
+    name: {{ .lableSelectorName }}
+    app: {{ .lableSelectorApp }}
+spec:
+  type: {{ .type }}
+  ports:
+    - port: {{ .servicePort }}
+      targetPort: {{ .targetPort }}
+      nodePort: {{ .nodePort }}
+      name: {{ .portName }}
+  selector:
+    name: {{ .podSelectorName }}
+    app: {{ .podSelectorApp }}
+---
+{{- end }}

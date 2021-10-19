@@ -1,0 +1,7 @@
+apiVersion: sample.example.com/v1alpha1
+kind: SampleOp
+metadata:
+  name: example-sampleop
+spec:
+  # Add fields here
+  image: busybox

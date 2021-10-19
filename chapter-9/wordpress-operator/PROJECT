@@ -1,0 +1,13 @@
+domain: wordpress.com
+layout: go.kubebuilder.io/v2
+repo: github.com/wordpress-inc/wordpress-operator
+resources:
+- group: hosting
+  kind: WordPress
+  version: v1alpha1
+- group: hosting
+  kind: MYSQL
+  version: v1alpha1
+version: 3-alpha
+plugins:
+  go.operator-sdk.io/v2-alpha: {}

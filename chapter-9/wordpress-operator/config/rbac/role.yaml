@@ -1,0 +1,67 @@
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - apps
+  resources:
+  - deployments
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  verbs:
+  - get
+  - list
+- apiGroups:
+  - hosting.wordpress.com
+  resources:
+  - MYSQLs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - hosting.wordpress.com
+  resources:
+  - MYSQLs/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - hosting.wordpress.com
+  resources:
+  - wordpresses
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - hosting.wordpress.com
+  resources:
+  - wordpresses/status
+  verbs:
+  - get
+  - patch
+  - update

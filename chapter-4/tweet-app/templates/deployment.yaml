@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    app: {{ .Values.dep.globalSelector.SelectorApp }}
+spec:
+  replicas: {{ .Values.dep.replicaCount }}
+  selector:
+    matchLabels:
+       {{- include "tweet-app.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      name: {{ .Values.dep.podSelector.PodName }}
+      labels:
+         {{- include "tweet-app.podLabels" . | nindent 8 }}
+    spec:
+      containers:
+      - name: {{ .Values.dep.pod.containerName}}
+        image: {{ .Values.dep.pod.containerImage}}
+       {{- if .Values.dep.pod.containerPort }}
+        ports:
+        - containerPort: {{ .Values.dep.pod.containerPort}}
+       {{- end }}
+---
+

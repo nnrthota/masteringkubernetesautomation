@@ -1,0 +1,11 @@
+apiVersion: hosting.wordpress.com/v1alpha1
+kind: WordPress
+metadata:
+  name: wordpress
+spec:
+  # Add fields here
+  size: 1
+  wordPressDBHost: wordpress-mysql
+  dataVolumeSize: 4Gi
+status:
+  nodes:

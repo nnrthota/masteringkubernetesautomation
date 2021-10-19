@@ -1,0 +1,6 @@
+1. Run Port Forward:
+  kubectl --namespace default port-forward service/result-svc 5001:5001
+  kubectl --namespace default port-forward service/vote-svc 5000:5000
+2. Get the voting application and result application
+  echo "Visit http://127.0.0.1:5000 to use your voting application"
+    echo "Visit http://127.0.0.1:5001 to use your result application"

@@ -1,0 +1,19 @@
+dep:
+  name: tweet-dep 
+  globalSelector:
+      SelectorApp: tweet-app
+  podSelector:
+      PodName: tweet-pod
+  replicaCount: 1
+  pod:
+    containerImage: narendranathreddy/linu-tweet-app
+    containerName: tweet
+    containerPort: 80
+
+svc:
+  name: web
+  type: NodePort
+  portName: db-port
+  targetPort: 80
+  servicePort: 80
+  nodePort: 30004
